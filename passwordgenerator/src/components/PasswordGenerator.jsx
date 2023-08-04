@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { lowerCaseList, upperCaseList, numberList,symbolList } from "../CharactereList";
-
-// const lowerCaseList = "abcdefghijklmnopqrstuvwxyz";
-// const upperCaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// const numberList = "0123456789";
-// const symbolList = "!@#$%^&(){}[]=<>/,.";
+import {
+  lowerCaseList,
+  upperCaseList,
+  numberList,
+  symbolList,
+} from "../CharactereList";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function PasswordGenerator() {
   const [password, setPassword] = useState("");
@@ -66,6 +67,16 @@ export default function PasswordGenerator() {
     const copiedText = await navigator.clipboard.readText();
     if (password.length && copiedText !== password) {
       navigator.clipboard.writeText(password);
+      toast.success("mot de passe copié !!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -74,14 +85,16 @@ export default function PasswordGenerator() {
       <div className="generator-card">
         <div className="password-box">
           <span id="result">{password}</span>
+          <button onClick={copyPassword}>Copy</button>
         </div>
 
         <div className="settings">
           <div className="setting">
-            <label>Longueur du mot de passe</label>
+            <label className="password-length">Longueur du mot de passe</label>
             <input
               type="number"
               id="length"
+              className="input-length"
               defaultValue={passwordLength}
               min={4}
               max={20}
@@ -92,7 +105,7 @@ export default function PasswordGenerator() {
             <label>inclure lettres majuscules</label>
             <input
               type="checkbox"
-              id="uppercase"
+              id="lowercase"
               checked={lowerCase}
               disabled={
                 selectedChoices.length === 1 &&
@@ -108,7 +121,7 @@ export default function PasswordGenerator() {
             <label>inclure lettres minuscules</label>
             <input
               type="checkbox"
-              id="lowercase"
+              id="uppercase"
               checked={upperCase}
               disabled={
                 selectedChoices.length === 1 &&
@@ -155,8 +168,8 @@ export default function PasswordGenerator() {
         </div>
 
         <button onClick={generatePassword}>Generer un mot de passe</button>
-        <button onClick={copyPassword}>Copy</button>
       </div>
+      <ToastContainer />
     </div>
   );
 }

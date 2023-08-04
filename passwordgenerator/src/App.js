@@ -1,6 +1,6 @@
-
-import './App.css';
-import PasswordGenerator from './components/PasswordGenerator';
+import PasswordGenerator from "./components/PasswordGenerator";
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
