@@ -6,6 +6,8 @@ import {
   symbolList,
 } from "../CharactereList";
 import { ToastContainer, toast } from "react-toastify";
+import copied from '../styles/img/copied.png';
+
 
 export default function PasswordGenerator() {
   const [password, setPassword] = useState("");
@@ -85,7 +87,11 @@ export default function PasswordGenerator() {
       <div className="generator-card">
         <div className="password-box">
           <span id="result">{password}</span>
-          <button onClick={copyPassword}>Copy</button>
+          <div onClick={copyPassword}>
+            <img src={copied} alt="copied-icone" />
+
+          </div>
+         
         </div>
 
         <div className="settings">
