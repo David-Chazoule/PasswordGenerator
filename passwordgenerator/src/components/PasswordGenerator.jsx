@@ -6,8 +6,7 @@ import {
   symbolList,
 } from "../CharactereList";
 import { ToastContainer, toast } from "react-toastify";
-import copied from '../styles/img/copied.png';
-
+import copied from "../styles/img/copied.png";
 
 export default function PasswordGenerator() {
   const [password, setPassword] = useState("");
@@ -77,7 +76,7 @@ export default function PasswordGenerator() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "Dark",
       });
     }
   };
@@ -87,93 +86,101 @@ export default function PasswordGenerator() {
       <div className="generator-card">
         <div className="password-box">
           <span id="result">{password}</span>
-          <div onClick={copyPassword}>
+          <div className="img-box" onClick={copyPassword}>
             <img src={copied} alt="copied-icone" />
-
           </div>
-         
         </div>
 
         <div className="settings">
-          <div className="setting">
+          <h3>Custome ton mot de passe</h3>
+          <div>
+            <div className="setting">
+              <label>inclure lettres majuscules(A-Z)</label>
+              <input
+                type="checkbox"
+                id="lowercase"
+                checked={lowerCase}
+                disabled={
+                  selectedChoices.length === 1 &&
+                  selectedChoices.includes("lowercase")
+                }
+                onChange={() => {
+                  setLowerCase(!lowerCase);
+                  handleCheckBox("lowercase");
+                }}
+              />
+            </div>
+            <div className="setting">
+              <label>inclure lettres minuscules (a-z)</label>
+              <input
+                type="checkbox"
+                id="uppercase"
+                checked={upperCase}
+                disabled={
+                  selectedChoices.length === 1 &&
+                  selectedChoices.includes("uppercase")
+                }
+                onChange={() => {
+                  setUpperCase(!upperCase);
+                  handleCheckBox("uppercase");
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <div className="setting">
+              <label>inclure nombres(0-9)</label>
+              <input
+                type="checkbox"
+                id="number"
+                checked={numbers}
+                disabled={
+                  selectedChoices.length === 1 &&
+                  selectedChoices.includes("numbers")
+                }
+                onChange={() => {
+                  setNumbers(!numbers);
+                  handleCheckBox("numbers");
+                }}
+              />
+            </div>
+            <div className="setting">
+              <label>inclure symboles (&-#) </label>
+              <input
+                type="checkbox"
+                id="symbol"
+                checked={symbols}
+                disabled={
+                  selectedChoices.length === 1 &&
+                  selectedChoices.includes("symbols")
+                }
+                onChange={() => {
+                  setSymbols(!symbols);
+                  handleCheckBox("symbols");
+                }}
+              />
+            </div>
+          </div>
+          <div className="setting-length">
             <label className="password-length">Longueur du mot de passe</label>
-            <input
-              type="number"
-              id="length"
-              className="input-length"
-              defaultValue={passwordLength}
-              min={4}
-              max={20}
-              onChange={(e) => setPasswordLength(e.currentTarget.value)}
-            />
-          </div>
-          <div className="setting">
-            <label>inclure lettres majuscules</label>
-            <input
-              type="checkbox"
-              id="lowercase"
-              checked={lowerCase}
-              disabled={
-                selectedChoices.length === 1 &&
-                selectedChoices.includes("lowercase")
-              }
-              onChange={() => {
-                setLowerCase(!lowerCase);
-                handleCheckBox("lowercase");
-              }}
-            />
-          </div>
-          <div className="setting">
-            <label>inclure lettres minuscules</label>
-            <input
-              type="checkbox"
-              id="uppercase"
-              checked={upperCase}
-              disabled={
-                selectedChoices.length === 1 &&
-                selectedChoices.includes("uppercase")
-              }
-              onChange={() => {
-                setUpperCase(!upperCase);
-                handleCheckBox("uppercase");
-              }}
-            />
-          </div>
-          <div className="setting">
-            <label>inclure nombres</label>
-            <input
-              type="checkbox"
-              id="number"
-              checked={numbers}
-              disabled={
-                selectedChoices.length === 1 &&
-                selectedChoices.includes("numbers")
-              }
-              onChange={() => {
-                setNumbers(!numbers);
-                handleCheckBox("numbers");
-              }}
-            />
-          </div>
-          <div className="setting">
-            <label>inclure symboles</label>
-            <input
-              type="checkbox"
-              id="symbol"
-              checked={symbols}
-              disabled={
-                selectedChoices.length === 1 &&
-                selectedChoices.includes("symbols")
-              }
-              onChange={() => {
-                setSymbols(!symbols);
-                handleCheckBox("symbols");
-              }}
-            />
+            <div className="length-box">
+              <input
+                type="range"
+                id="length"
+                className="input-length"
+                defaultValue={passwordLength}
+                min={4}
+                max={20}
+                onChange={(e) => setPasswordLength(e.currentTarget.value)}
+              />
+              <span>{passwordLength}</span>
+            </div>
           </div>
         </div>
 
-        <button onClick={generatePassword}>Generer un mot de passe</button>
+        <button className="btn-generate" onClick={generatePassword}>
+          Generer un mot de passe
+        </button>
       </div>
       <ToastContainer />
     </div>
