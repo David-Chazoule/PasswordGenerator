@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/PasswordGenerator/static/css/main.52c68808.css",
+    "main.js": "/PasswordGenerator/static/js/main.82a6bba3.js",
+    "static/js/787.e09e6b42.chunk.js": "/PasswordGenerator/static/js/787.e09e6b42.chunk.js",
+    "static/media/copied.png": "/PasswordGenerator/static/media/copied.e6febb683f31947b155b.png",
+    "static/media/Orbitron-VariableFont_wght.ttf": "/PasswordGenerator/static/media/Orbitron-VariableFont_wght.7228a1c750b75b23bdb4.ttf",
+    "index.html": "/PasswordGenerator/index.html",
+    "main.52c68808.css.map": "/PasswordGenerator/static/css/main.52c68808.css.map",
+    "main.82a6bba3.js.map": "/PasswordGenerator/static/js/main.82a6bba3.js.map",
+    "787.e09e6b42.chunk.js.map": "/PasswordGenerator/static/js/787.e09e6b42.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52c68808.css",
+    "static/js/main.82a6bba3.js"
+  ]
+}
