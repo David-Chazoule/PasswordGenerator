@@ -26,6 +26,8 @@ export default function PasswordGenerator() {
     generatePassword();
   }, [passwordLength]);
 
+
+
   const handleCheckBox = (type) => {
     let tempChoices = selectedChoices;
     if (tempChoices.includes(type)) {
@@ -36,6 +38,8 @@ export default function PasswordGenerator() {
     }
     setSelectedChoices(tempChoices);
   };
+
+  /* generates a random password based on the options checked */
 
   const generatePassword = () => {
     let characterList = "";
@@ -63,6 +67,8 @@ export default function PasswordGenerator() {
 
     setPassword(tempPassword);
   };
+
+   /*copy password to clipboard*/
 
   const copyPassword = async () => {
     const copiedText = await navigator.clipboard.readText();
@@ -95,7 +101,7 @@ export default function PasswordGenerator() {
           <h3>Custome ton mot de passe</h3>
           <div>
             <div className="setting">
-              <label>inclure lettres majuscules(A-Z)</label>
+              <label>Lettres majuscules (A-Z)</label>
               <input
                 type="checkbox"
                 id="lowercase"
@@ -111,7 +117,7 @@ export default function PasswordGenerator() {
               />
             </div>
             <div className="setting">
-              <label>inclure lettres minuscules (a-z)</label>
+              <label>Lettres minuscules (a-z)</label>
               <input
                 type="checkbox"
                 id="uppercase"
@@ -129,7 +135,7 @@ export default function PasswordGenerator() {
           </div>
           <div>
             <div className="setting">
-              <label>inclure nombres(0-9)</label>
+              <label>Nombres (0-9)</label>
               <input
                 type="checkbox"
                 id="number"
@@ -145,7 +151,7 @@ export default function PasswordGenerator() {
               />
             </div>
             <div className="setting">
-              <label>inclure symboles (&-#) </label>
+              <label>Symboles (&-#) </label>
               <input
                 type="checkbox"
                 id="symbol"
@@ -173,14 +179,15 @@ export default function PasswordGenerator() {
                 max={20}
                 onChange={(e) => setPasswordLength(e.currentTarget.value)}
               />
-              <span>{passwordLength}</span>
+              <p>{passwordLength}</p>
             </div>
           </div>
         </div>
-
-        <button className="btn-generate" onClick={generatePassword}>
-          Generer un mot de passe
-        </button>
+        <div>
+          <button className="btn-generate" onClick={generatePassword}>
+            Generer un mot de passe
+          </button>
+        </div>
       </div>
       <ToastContainer />
     </div>
