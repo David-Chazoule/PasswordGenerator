@@ -35,9 +35,9 @@ Choose up to 4 options:
 - Lowercase Letters (a-z)
 - Numbers (0-9)
 - Symbols (&, #, etc.)
-- Generate the Password:
 
-**Click the "Generate Password" button.**
+**Generate the Password:**
+Click the "Generate Password" button.
 
 **Copy to Clipboard:**
 You have the option to copy the generated password to your clipboard.
