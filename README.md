@@ -40,7 +40,7 @@ Choose up to 4 options:
 - Symbols (&, #, etc.)
 
 **Generate the Password:**
-Click the "Generate Password" button.
+Click the "Générer un mot de passe" button.
 
 **Copy to Clipboard:**
 You have the option to copy the generated password to your clipboard.
