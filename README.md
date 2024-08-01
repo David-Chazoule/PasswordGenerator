@@ -20,7 +20,7 @@ npm install
 ```bash
 npm start
 ```
-#Project Structure
+# Project Structure
 Here's an overview of the project structure:
 
 **src/:** *Contains the source code for the application.*
