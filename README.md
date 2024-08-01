@@ -24,7 +24,9 @@ npm start
 Here's an overview of the project structure:
 
 **src/:** Contains the source code for the application.
+
 **components/:** Reusable React components.
+
 **styles/**: Sass files for styling.
 
 # How It Works
