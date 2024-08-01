@@ -1,6 +1,6 @@
 # PasswordGenerator
 
-<img src="https://cdn.discordapp.com/attachments/1268608877755236446/1268608949566046350/passwordgenerator.PNG?ex=66ad0ba7&is=66abba27&hm=14f36a3a2e73ca7b1b1039b729ed2e57940dd85b6ae5fa91d3e00642e7d2614c&" alt="Example Image" style="width:200px; height:auto;">
+<img src="https://cdn.discordapp.com/attachments/1268608877755236446/1268608949566046350/passwordgenerator.PNG?ex=66ad0ba7&is=66abba27&hm=14f36a3a2e73ca7b1b1039b729ed2e57940dd85b6ae5fa91d3e00642e7d2614c&" alt="Example Image" style="width:400px; height:auto;">
 
 
 This project is a web application designed to generate random passwords. It allows customization of passwords with various options.
