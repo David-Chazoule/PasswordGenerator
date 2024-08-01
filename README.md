@@ -5,8 +5,9 @@ This project is a web application designed to generate random passwords. It allo
 # Technologies Used
 The application has been developed using:
 
--React.js
--Sass
+**-React.js**
+
+**-Sass**
 
 # Installation and Execution
 To set up and run the application locally, follow these steps:
